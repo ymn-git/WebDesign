@@ -1,0 +1,102 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--espaciado-md);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid var(--borde-color);
+  border-radius: var(--borde-redondeado);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.imagen-contacto {
+  max-width: 100%;
+  border-radius: var(--borde-redondeado);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaciado-md);
+}
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--espaciado-sm);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.branding {
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+.titulos {
+  max-width: 100%;
+}
+
+#subtitulo{
+    color: aliceblue;
+    margin-top: 40px;
+}
+main{
+    color: aliceblue;
+    align-items: center;
+}
+header {
+  background-color: #142cb5;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+footer {
+  background-color: #142cb5;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

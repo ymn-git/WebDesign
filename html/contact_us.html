@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link rel="stylesheet" href="/css/global_styles.css" />
+  <link rel="stylesheet" href="/css/contact_us_styless.css" />
+</head>
+<body>
+
+  <header>
+  <div class="branding">
+    <div class="titulos">
+      <h1>Contacto</h1>
+    </div>
+  </div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="subtitulo">Completa el formulario de contacto y envíanos una consulta u opinión:</h2>
+</header>
+
+  <main>
+    <section class="form-container">
+  <form id="form-contacto" novalidate>
+    <div class="form-row">
+      <label for="nombre" class="form-label">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" class="form-input" required />
+    </div>
+
+    <div class="form-row">
+      <label for="email" class="form-label">Correo electrónico *</label>
+      <input type="email" id="email" name="email" class="form-input" required />
+    </div>
+
+    <div class="form-row">
+      <label for="edad" class="form-label">Edad</label>
+      <input type="number" id="edad" name="edad" class="form-input" min="18" max="99" />
+    </div>
+
+    <div class="form-row">
+  <label for="pais" class="form-label">País de residencia *</label>
+  <select id="pais" name="pais" class="form-input" required>
+    <option value="">Seleccionar país</option>
+  </select>
+</div>
+
+
+    <fieldset class="form-row">
+      <legend>Tipo de consulta *</legend>
+      <label><input type="radio" name="tipo" value="consulta" required /> Consulta</label>
+      <label><input type="radio" name="tipo" value="sugerencia" /> Sugerencia</label>
+      <label><input type="radio" name="tipo" value="reporte" /> Reporte</label>
+    </fieldset>
+
+    <fieldset class="form-row">
+      <legend>Temas de interés</legend>
+      <label><input type="checkbox" name="interes" value="api" /> API</label>
+      <label><input type="checkbox" name="interes" value="diseño" /> Diseño</label>
+      <label><input type="checkbox" name="interes" value="ux" /> UX</label>
+    </fieldset>
+
+    <div class="form-row">
+      <label for="mensaje" class="form-label">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" class="form-input" rows="4" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <label><input type="checkbox" id="acepto" required /> Acepto los términos y condiciones *</label>
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpiar</button>
+    </div>
+  </form>
+</section>
+
+  </main>
+  <footer>
+    <p>© 2025 - Proyecto Web desarrollado por Nasif Yair</p>
+    <p><a href="https://github.com/ymn-git/WebDesign.git" target="_blank">Click aquí para ir al repositorio en GitHub</a></p>
+  </footer>
+  
+  <script>
+  document.getElementById("form-contacto").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const edad = document.getElementById("edad").value;
+    const pais = document.getElementById("pais").value;
+    const tipo = document.querySelector('input[name="tipo"]:checked');
+    const mensaje = document.getElementById("mensaje").value.trim();
+    const acepto = document.getElementById("acepto").checked;
+
+    //aca hago las validaciones con comparaciones logicas
+    if (!nombre || !email || !pais || !tipo || !mensaje || !acepto) {
+      alert("Por favor, completá todos los campos obligatorios.");
+      return;
+    }
+
+    // validacion de edad si se completó
+    if (edad && (edad < 18 || edad > 99)) {
+      alert("La edad debe estar entre 18 y 99 años.");
+      return;
+    }
+
+    alert("¡Mensaje enviado con éxito! Gracias por contactarnos.");
+    this.reset();
+  });
+</script>
+<script src="/api/contacto.js"></script>
+</body>
+</html>

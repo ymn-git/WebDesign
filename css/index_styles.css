@@ -1,0 +1,154 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaciado-md);
+  padding: var(--espaciado-md);
+  background-color: #142cb5;
+  color: white;
+
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado-sm);
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.titulos h1 {
+  font-size: 1.8rem;
+  margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  color: var(--color-primario);
+}
+
+.titulos h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--color-secundario);
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: var(--espaciado-sm);
+}
+
+.menu li {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--color-primario);
+  font-weight: normal;
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  background-color: var(--color-acento-claro);
+  border-radius: var(--borde-redondeado);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-sm);
+  padding: var(--espaciado-md);
+}
+
+.card {
+  background-color: var(--color-secundario);
+  border-radius: var(--borde-redondeado);
+  border: 5px solid var(--borde-color);
+  padding: var(--espaciado-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--borde-redondeado);
+  margin-bottom: var(--espaciado-xs);
+}
+
+.card h3,
+.card p {
+  margin-bottom: var(--espaciado-xs);
+}
+
+/* 2. Breakpoint Tablet (768px+) */
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .branding {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* 3. Breakpoint Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 4. Responsividad del menú */
+@media (max-width: 600px) {
+  .menu ul {
+    flex-direction: column;
+    gap: var(--espaciado-xs);
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    text-align: center;
+  }
+
+  .branding {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+footer {
+  background-color: #142cb5;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

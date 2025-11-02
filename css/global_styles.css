@@ -1,0 +1,70 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Colores */
+  --color-fondo: #04000a;
+  --color-texto: #030e4f;
+  --color-primario: #ffffff;
+  --color-secundario: #f0f0f0;
+
+  /* Espaciado */
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 1rem;
+  --espaciado-md: 2rem;
+  --espaciado-lg: 4rem;
+
+  /* Bordes */
+  --borde-redondeado: 8px;
+  --borde-color: #142cb5;
+
+  /* Tipografía */
+  --fuente-base: 'SF Pro', sans-serif;
+  --tamaño-texto: 16px;
+}
+/* Estilos base */
+body {
+  font-family: var(--fuente-base);
+  font-size: var(--tamaño-texto);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--espaciado-sm);
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: var(--espaciado-sm);
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--espaciado-md);
+}
+footer{
+    align-self: end;
+}
