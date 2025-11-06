@@ -4,14 +4,20 @@ body {
   padding: 0;
   color: #333;
   line-height: 1.6;
+  background-color: #f0f4f7;
 }
 .form-container {
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   max-width: 800px;
   margin: 0 auto;
   padding: var(--espaciado-md);
+  color: rgb(45, 42, 42);
+  border: solid rgb(45, 39, 127);
+  border-radius: 10px;
+  background-color: #ebeced;
 }
 
 .form-row {
@@ -65,6 +71,11 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
+  
+}
+header h1 {
+  font-size: 2.2rem;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .branding {

@@ -46,11 +46,7 @@ header h1 {
 }
 
 /* Secciones principales */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+
 
 section {
   background-color: white;
@@ -97,7 +93,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem; 
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
+
 
 .api p a{
     color: #1f3de0;

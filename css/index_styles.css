@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #eee8e8;
   line-height: 1.6;
 }
 header {
@@ -82,7 +82,7 @@ header {
 }
 
 .card {
-  background-color: var(--color-secundario);
+  background-color: var(--color-terciario);
   border-radius: var(--borde-redondeado);
   border: 5px solid var(--borde-color);
   padding: var(--espaciado-sm);
@@ -151,4 +151,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+}
+main{
+  background-color: #f0f4f7;
 }
