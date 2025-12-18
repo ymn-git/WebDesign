@@ -9,11 +9,11 @@ body {
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* asegura footer abajo */
+  min-height: 100vh;
 }
 
 main {
-  flex: 1; /* empuja footer al final */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,28 +32,37 @@ header h1 {
   font-size: 2.2rem;
   margin: 0;
 }
-
+/* Base: siempre horizontal */
 .menu ul {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 1rem 0 0;
 }
 
-.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.menu ul li {
+  /* no forzar ancho completo en base */
+  width: auto;
+  text-align: left;
 }
 
-.menu ul li:hover {
-  background-color: #1f3de0;
-  border-radius: 6px;
-}
+/* Mobile: apilar verticalmente */
+@media (max-width: 600px) {
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Formulario */
+  .menu ul li {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Formulario de carga */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -90,22 +99,6 @@ header h1 {
 .form-input:focus {
   border-color: #f4a261; /* acento naranja */
   outline: none;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
-}
-
-legend {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #142cb5;
-}
-
-.imagen-contacto {
-  max-width: 100%;
-  border-radius: 8px;
 }
 
 /* Botones */

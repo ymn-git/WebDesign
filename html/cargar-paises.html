@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cargar País</title>
+  <link rel="stylesheet" href="/css/global_styles.css">
+  <link rel="stylesheet" href="/css/cargar-paises.css">
+  <link rel="icon" href="/images/logo.png">
+</head>
+<body>
+  <header>
+    <h1>Cargar País</h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact_us.html">Contacto</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="cargar-paises.html">Cargar País</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <form id="form-cargar" novalidate>
+        <div class="form-row">
+          <label for="nombre">Nombre común *</label>
+          <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-row">
+          <label for="capital">Capital *</label>
+          <input type="text" id="capital" required>
+        </div>
+
+        <div class="form-row">
+          <label for="region">Región *</label>
+          <input type="text" id="region" required>
+        </div>
+
+        <div class="form-row">
+          <label for="poblacion">Población *</label>
+          <input type="number" id="poblacion" min="1" required>
+        </div>
+
+        <div class="form-row">
+          <label for="bandera">Bandera (URL de imagen)</label>
+          <input type="url" id="bandera">
+        </div>
+
+        <div class="form-row">
+          <label for="codigo">Código ISO (cca2)</label>
+          <input type="text" id="codigo" maxlength="2">
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Guardar</button>
+          <button type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Proyecto Web desarrollado por Nasif Yair</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("form-cargar");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nuevoPais = {
+          name: { common: document.getElementById("nombre").value.trim() },
+          capital: [document.getElementById("capital").value.trim()],
+          region: document.getElementById("region").value.trim(),
+          population: parseInt(document.getElementById("poblacion").value),
+          flags: { 
+            png: document.getElementById("bandera").value.trim() || "", 
+            alt: "Bandera personalizada" 
+          },
+          cca2: document.getElementById("codigo").value.trim().toUpperCase() || ""
+        };
+
+        if (!nuevoPais.name.common || !nuevoPais.capital[0] || !nuevoPais.region || !nuevoPais.population) {
+          alert("Por favor, completá todos los campos obligatorios.");
+          return;
+        }
+
+        // Recuperar lo que ya está en localStorage
+        const datos = JSON.parse(localStorage.getItem("paisesAPI") || "[]");
+
+        // Agregar el nuevo país
+        datos.push(nuevoPais);
+
+        localStorage.setItem("paisesAPI", JSON.stringify(datos));
+
+        alert("País cargado con éxito ");
+        window.location.href = "index.html"; 
+      });
+    });
+  </script>
+</body>
+</html>
