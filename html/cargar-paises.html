@@ -22,24 +22,24 @@
 
   <main>
     <section class="form-container">
-      <form id="form-cargar" novalidate>
+      <form id="form-cargar">
         <div class="form-row">
-          <label for="nombre">Nombre común *</label>
+          <label for="nombre">Nombre común </label>
           <input type="text" id="nombre" required>
         </div>
 
         <div class="form-row">
-          <label for="capital">Capital *</label>
+          <label for="capital">Capital </label>
           <input type="text" id="capital" required>
         </div>
 
         <div class="form-row">
-          <label for="region">Región *</label>
+          <label for="region">Región </label>
           <input type="text" id="region" required>
         </div>
 
         <div class="form-row">
-          <label for="poblacion">Población *</label>
+          <label for="poblacion">Población </label>
           <input type="number" id="poblacion" min="1" required>
         </div>
 
@@ -49,7 +49,7 @@
         </div>
 
         <div class="form-row">
-          <label for="codigo">Código ISO (cca2)</label>
+          <label for="codigo">Código ISO </label>
           <input type="text" id="codigo" maxlength="2">
         </div>
 
@@ -73,6 +73,7 @@
         e.preventDefault();
 
         const nuevoPais = {
+          //common va porque la api devuelve 2 nombres en subgrupos common y official pero yo quiero solo common
           name: { common: document.getElementById("nombre").value.trim() },
           capital: [document.getElementById("capital").value.trim()],
           region: document.getElementById("region").value.trim(),
